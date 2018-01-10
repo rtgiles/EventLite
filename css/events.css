@@ -1,0 +1,52 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Dosis|Poppins|Quicksand');
+
+body {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.filterDiv {
+    display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+.btn-secondary {
+	border: 1px solid white;
+	border-radius: 17px;
+}
+
+.btn-info {
+	border-radius: 22px;
+	padding: 0px;
+}
+
+#createEvent {
+  padding: 5px;
+}
+
+a {
+	color: #1188b8;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
