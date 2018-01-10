@@ -78,7 +78,7 @@
               </div>
               <div class="form-group">
                 <label for="longDescField">Full Description</label>
-                <input type="text" class="form-control" id="longDescField" placeholder="Full Description">
+                <textarea class="form-control" id="longDescField" placeholder="Full Description"></textarea>
               </div>
               <div class="form-group">
                 <label for="dateField">Date</label>
@@ -96,33 +96,36 @@
                 <label for="picField">Link to Picture</label>
                 <input type="text" class="form-control" id="picField" placeholder="Picture Link">
               </div>
-                <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category 1</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="category1">
-                  <a class="dropdown-item" href="#">Music</a>
-                  <a class="dropdown-item" href="#">Food</a>
-                  <a class="dropdown-item" href="#">Sports</a>
-                  <a class="dropdown-item" href="#">Political</a>
-                  <a class="dropdown-item" href="#">Education</a>
-                  <a class="dropdown-item" href="#">Kids</a>
-                  <a class="dropdown-item" href="#">Volunteer</a>
-                  <a class="dropdown-item" href="#">Professional</a>
-                  <a class="dropdown-item" href="#">Arts</a>
-                </div>
+              <div class="form-group">
+                <label for="category1">Category 1</label>
+                <select class="form-control" id="category1">
+                  <option>Music</option>
+                  <option>Food</option>
+                  <option>Sports</option>
+                  <option>Political</option>
+                  <option>Education</option>
+                  <option>Kids</option>
+                  <option>Volunteer</option>
+                  <option>Professional</option>
+                  <option>Arts</option>
+                  <option>Other</option>
+                </select>
               </div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category 2</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="category1">
-                  <a class="dropdown-item" href="#">Music</a>
-                  <a class="dropdown-item" href="#">Food</a>
-                  <a class="dropdown-item" href="#">Sports</a>
-                  <a class="dropdown-item" href="#">Political</a>
-                  <a class="dropdown-item" href="#">Education</a>
-                  <a class="dropdown-item" href="#">Kids</a>
-                  <a class="dropdown-item" href="#">Volunteer</a>
-                  <a class="dropdown-item" href="#">Professional</a>
-                  <a class="dropdown-item" href="#">Arts</a>
-                </div>
+              <div class="form-group">
+                <label for="category2">Category 2</label>
+                <select class="form-control" id="category2">
+                  <option>Music</option>
+                  <option>Food</option>
+                  <option>Sports</option>
+                  <option>Political</option>
+                  <option>Education</option>
+                  <option>Kids</option>
+                  <option>Volunteer</option>
+                  <option>Professional</option>
+                  <option>Arts</option>
+                  <option>Other</option>
+                  <option>None</option>
+                </select>
               </div>
             </form>
           </div>
@@ -225,6 +228,7 @@
                   <h4 class="card-title">
                     <a href="#">Wine Tasting</a> <!-- need to put date/time -->
                   </h4>
+                  <h3 class="timeDate">1/15/18, 8PM</h3>
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                 </div>
               </div>

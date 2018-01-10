@@ -19,6 +19,10 @@ body {
     display: block;
 }
 
+h3 {
+  font-size: 18px;
+}
+
 .btn-secondary {
   border: 1px solid white;
   border-radius: 17px;
