@@ -132,7 +132,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-info" id="createEvent">Submit</button>
+            <button type="button" class="btn btn-primary" id="createEvent">Submit</button>
           </div>
         </div>
       </div>
@@ -162,6 +162,25 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Sign In</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="wine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="title">Wine Tasting</h5>
+            
+          </div>
+          <div class="modal-body">
+            <h6>picture here</h6>
+            <h5>Date / Time</h5>
+            <p>Long description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -227,7 +246,7 @@
                 <a href="#"><img class="card-img-top" src="https://cdn4.i-scmp.com/sites/default/files/styles/700x400/public/2017/05/17/asian_wine_festival.jpg?itok=KHoHGvwC" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">Wine Tasting</a> <!-- need to put date/time -->
+                    <a href="#" data-toggle="modal" data-target="#wine">Wine Tasting</a> 
                   </h4>
                   <h3 class="timeDate">1/15/18, 8PM</h3>
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -242,6 +261,7 @@
                   <h4 class="card-title">
                     <a href="#">Pasta Party</a>
                   </h4>
+                  <h3 class="timeDate">1/19/18, 3PM</h3>
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
