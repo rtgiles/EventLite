@@ -10,3 +10,4 @@ CREATE TABLE events (
 	event_date DATETIME,
 	PRIMARY KEY (id) 
 );
+
