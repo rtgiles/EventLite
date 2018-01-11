@@ -1,0 +1,38 @@
+{
+    "events": [
+        {
+         "event_creator" : "Will",
+         "event_name" : "Burger Run",
+         "event_locaation" : "Au Cheval",
+         "event_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!",
+         "event_date" : "2018-07-15 14:30:00"
+        },
+        {
+            "event_creator" : "Darko" ,
+            "event_name" : "Beer Run" ,
+            "event_locaation" : "Foremost Liquers" ,
+            "event_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!",
+            "event_date" :  "2018-07-15 14:30:00"
+        },
+        {
+            "event_creator" : "Antoine" ,
+            "event_name" : "Basketball Run" ,
+            "event_locaation" : "United Center" ,
+            "event_date" :  "2018-07-15 14:30:00"
+        },
+        {
+            "event_creator" : "Ron" ,
+            "event_name" : "Chicken Nugget Run" ,
+            "event_locaation" : "Wendys" ,
+            "event_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!",
+            "event_date" :  "2018-07-15 14:30:00"
+        },
+        {
+            "event_creator" : "Van" ,
+            "event_name" : "Game Run" ,
+            "event_locaation" : "Game Stop" ,
+            "event_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!",
+            "event_date" :  "2018-07-15 14:30:00"
+        }
+    ]
+}
