@@ -10,8 +10,9 @@ var app = express();
 var port = 8080;
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "events" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());

@@ -2,7 +2,7 @@
   "name": "eventlite",
   "version": "1.0.0",
   "description": "Social Activists Event Finder",
-  "main": "index.js",
+  "main": "server1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
