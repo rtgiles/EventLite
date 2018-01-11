@@ -26,6 +26,7 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 require("./routes/event-routes.js")(app);
+require("./routes/user-routes.js")(app);
 
 // Starting our Express app
 // =============================================================

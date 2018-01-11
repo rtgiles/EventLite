@@ -35,7 +35,7 @@ let orm = {
     },
 
     insertOne: function(tableName, accountName, eventName, location, time, cb){
-        let sql = 'INSERT INTO ?? (event_creator, event_name, event_location, event_date) VALUES (?)'
+        let sql = 'INSERT INTO ?? (account_name, event_name, event_location, event_time) VALUES (?)'
 
         con.query(sql, [tableName ,accountName, eventName, location, time], function (err, result) {
             if (err) throw err;

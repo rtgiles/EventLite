@@ -1,3 +1,5 @@
+let Twitter = require('twitter');
+
 var client = new Twitter({
   consumer_key: 'BqltzwfnkpvX0t35iBKwhA9ra',
   consumer_secret: 'yP6zWuA3oZXJqRvPX59ddK2VVTsG4zz1pIITriC2pyuqxtE1yS',

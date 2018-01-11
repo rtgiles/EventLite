@@ -1,13 +1,12 @@
-CREATE DATABASE events_db;
+### Schema
 
-USE events_db;
+USE ticketMaster;
 
-CREATE TABLE events (
-	id int NOT NULL AUTO_INCREMENT,
-	event_creator VARCHAR(500) NOT NULL,
-	event_name VARCHAR(500) NOT NULL,
-	event_location VARCHAR(500) NOT NULL,
-	event_date DATETIME,
-	PRIMARY KEY (id) 
+CREATE TABLE events
+(
+	id int NOT NULL AUTO_INCREMENT primary key,
+	account_name varchar(255) NOT NULL,
+	event_name varchar(255) NOT NULL,
+	event_location varchar(255) NOT NULL,
+	event_time datetime
 );
-
