@@ -63,8 +63,10 @@ var events= [
 
 
 // Get all events
-app.get("/all", function(req, res) {
-  res.render(events);
+app.get("/", function(req, res) {
+  res.render('events', {
+      events: events
+  });
 });
 
 // Starts the server to begin listening
