@@ -279,9 +279,31 @@
         }
       }
     
+      connect("api/allEvents");
+      function connect(keyWord){
+
+  queryURL = 'https://cryptic-ridge-95312.herokuapp.com/' + keyWord;
+
+
+
+  $.ajax({
+
+        url : queryURL,
+
+        method : "GET",
+
+    })
+
+    .done(function(response){
+    /Prints all of the events to the console
+        console.log(response);
     
-    
-    
+    //Add code below that manipulates html using jQuery
+
+    });
+
+  }
+      
 
 
       // Show filtered elements
