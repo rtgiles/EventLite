@@ -149,13 +149,13 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="title">Wine Tasting</h5>
+            <h5 class="modal-title" id="title">{{this.title}} </h5>
             
           </div>
           <div class="modal-body">
             <h6>picture here</h6>
-            <h5>Date / Time</h5>
-            <p>Long description here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            <h5>{{this.time}} </h5>
+            <p>{{this.full_desc}} </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -223,13 +223,13 @@
             {{#each events}}
               <div class="col-lg-4 col-md-6 mb-4 Food filterDiv">
                 <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="https://cdn4.i-scmp.com/sites/default/files/styles/700x400/public/2017/05/17/asian_wine_festival.jpg?itok=KHoHGvwC" alt=""></a>
+                  <a href="#"><img class="card-img-top" src= {{this.eventLinkPic}} alt=""></a>
                   <div class="card-body">
                     <h4 class="card-title">
-                      <a href="#" data-toggle="modal" data-target="#wine">{{this.event_name}}</a> 
+                      <a href="#" data-toggle="modal" data-target="#wine">{{this.title}}</a> 
                     </h4>
                     <h3 class="timeDate">{{this.event_date}} </h3>
-                    <p class="card-text">{{this.event_description}} </p>
+                    <p class="card-text">{{this.short_desc}} </p>
                   </div>
                 </div>
               </div>
