@@ -3,6 +3,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var axios= require("axios");
 
 // Sets up the Express App
 // =============================================================
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// EventsLite Data
+/* // EventsLite Data
 // =============================================================
 var events= [
     {
@@ -63,7 +64,7 @@ var events= [
         event_date :  "2018-07-15 14:30:00",
         event_cat1: "Music"
     }
-  ];
+  ]; */
 
 // Routes
 // =============================================================
@@ -71,9 +72,17 @@ var events= [
 
 // Get all events
 app.get("/", function(req, res) {
-  res.render('events', {
-      events: events
+   axios.get('https://cryptic-ridge-95312.herokuapp.com/api/allEvents')
+  .then(function (response) {
+     res.render('events', {
+      events: response.data
+  }); 
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
   });
+    
 });
 
 // Starts the server to begin listening
