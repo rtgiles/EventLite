@@ -315,8 +315,8 @@
       $('.signUpBtn').on('click', function(){
           $.post("http://localhost:8080/api/signup",
           {
-              username: $('#emailFieldSU').val().trim(),
-              password: $('#passwordFieldSU').val().trim()
+              username: $('#emailField').val().trim(),
+              password: $('#passwordField').val().trim()
           },
           function(data, status){
               //Maybe make below prettier instead of an alert.
