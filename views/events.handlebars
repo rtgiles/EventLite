@@ -138,6 +138,7 @@
             </form>
           </div>
           <div class="modal-footer">
+
             <button type="button" class="btn btn-info" id="sign-in" >Sign In with Facebook</button>
             <button type="button" class="btn btn-primary" id="sign-in" >Sign In</button>
             <button type="button" class="btn btn-primary" id="sign-in" >Create New User Account</button>
@@ -147,25 +148,27 @@
       </div>
     </div>
 
-    <div class="modal fade" id="wine" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="title">{{this.title}} </h5>
-            
-          </div>
-          <div class="modal-body">
-            <h6>picture here</h6>
-            <h5>{{this.time}} </h5>
-            <p>{{this.full_desc}} </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Register</button>
+    {{#each events}}
+      <div class="modal fade" id="{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="title">{{this.title}} </h5>
+              
+            </div>
+            <div class="modal-body">
+              <img class="card-img-top" src= {{this.eventLinkPic}}>
+              <h5>{{this.event_date}}</h5>
+              <p>{{this.full_desc}} </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Register</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    {{/each}}
 
     <!-- Page Content -->
     <div class="container">
@@ -186,6 +189,7 @@
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Volunteer')">Volunteering</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Professional')">Professional</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Arts')">Arts</button>
+            <button type="button" class="btn btn-secondary" onclick="filterSelection('Other')">Other</button>
           </div>
 
         </div>
@@ -223,12 +227,12 @@
           <div class="row">
             <!--<script id="eventTemplate" type="text/x-handlebars-template">-->
             {{#each events}}
-              <div class="col-lg-4 col-md-6 mb-4 Food filterDiv">
+              <div class="col-lg-4 col-md-6 mb-4 filterDiv {{this.eventCategoryOne}} {{this.eventCategoryTwo}}">
                 <div class="card h-100">
                   <a href="#"><img class="card-img-top" src= {{this.eventLinkPic}} alt=""></a>
                   <div class="card-body">
                     <h4 class="card-title">
-                      <a href="#" data-toggle="modal" data-target="#wine">{{this.title}}</a> 
+                      <a href="#" data-toggle="modal" data-target="#{{this.id}}">{{this.title}}</a> 
                     </h4>
                     <h3 class="timeDate">{{this.event_date}} </h3>
                     <p class="card-text">{{this.short_desc}} </p>
@@ -252,22 +256,17 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Team Green</p>
       </div>
       <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     
- 
-    {{!-- <script src="../vendor/jquery/jquery.min.js"></script> --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {{!-- <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    {{!-- <script src="../vendor/handlebars/handlebars-v4.0.11.js"></script> --}}
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script> --}}
-    <script src="scripts/main.js"></script>
+
     <script type="text/javascript">
       filterSelection("all")
       function filterSelection(c) {
@@ -279,11 +278,7 @@
           w3RemoveClass(x[i], "show");
           if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
         }
-      }
-    
-    
-    
-    
+      }   
 
 
       // Show filtered elements
@@ -321,6 +316,32 @@
           this.className += " active";
         });
       }
+
+
+      //Darko Added 
+      $('.signInBtn').on('click', function(){
+          $.post("http://localhost:8080/api/login",
+          {
+              username: $('#emailField').val().trim(),
+              password: $('#passwordField').val().trim()
+          },
+          function(data, status){
+              window.localStorage.setItem('token', data);
+              //Add something to exit modal.
+          });
+      });
+      //Note you have to name your signup div's ids emailFieldSU and passwordFieldSU
+      $('.signUpBtn').on('click', function(){
+          $.post("http://localhost:8080/api/signup",
+          {
+              username: $('#emailFieldSU').val().trim(),
+              password: $('#passwordFieldSU').val().trim()
+          },
+          function(data, status){
+              //Maybe make below prettier instead of an alert.
+              alert('Created new account!');
+          });
+      });
 
     </script>
 
