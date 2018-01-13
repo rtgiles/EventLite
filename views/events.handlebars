@@ -177,7 +177,7 @@
         <div class="col-lg-3">
 
           <h1 class="my-4">EventLite</h1>
-          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+          <div class="btn-group-vertical" id="myBtnContainer" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary" onclick="filterSelection('all')">Show All</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Music')">Music</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Food')">Food &amp; Drink</button>
@@ -319,7 +319,7 @@
 
       //Darko Added 
       $('.signInBtn').on('click', function(){
-          $.post("http://localhost:8080/api/login",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/login",
           {
               username: $('#emailField').val().trim(),
               password: $('#passwordField').val().trim()
@@ -331,7 +331,7 @@
       });
       //Note you have to name your signup div's ids emailFieldSU and passwordFieldSU
       $('.signUpBtn').on('click', function(){
-          $.post("http://localhost:8080/api/signup",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/signup",
           {
               username: $('#emailField').val().trim(),
               password: $('#passwordField').val().trim()
@@ -339,6 +339,25 @@
           function(data, status){
               //Maybe make below prettier instead of an alert.
               alert('Created new account!');
+          });
+      });
+
+      $('#createEvent').on('click', function(){
+        console.log("hi");
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/insertEvent", {
+              title: $('#titleField').val().trim(),
+              organizer: $('#orgField').val().trim(),
+              short: $('#shortDescField').val().trim(),
+              long: $('#longDescField').val().trim(),
+              date: $('#dateField').val(),
+              time: $('#timeField').val(),
+              address: $('#addressField').val().trim(),
+              pic: $('#picField').val().trim(),
+              category1: $('#category1').val(),
+              category2: $('#category2').val()
+          },
+          function(date, status){
+            alert('Created new event!');
           });
       });
 
