@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "handlebars.moment": "^1.0.4"
   }
 }
