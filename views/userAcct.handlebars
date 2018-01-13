@@ -216,7 +216,8 @@
                     <h4 class="card-title">
                       <a href="#" data-toggle="modal" data-target="#{{this.id}}">{{this.title}}</a> 
                     </h4>
-                    <h3 class="timeDate">{{this.event_date}} </h3>
+                    <h3 class="timeDate">{{moment this.event_date format="dddd, MMMM Do YYYY"}} </h3>
+                   <h3 class="timeDate">{{moment this.event_date format="h:mm a"}} </h3>
                     <p class="card-text">{{this.short_desc}} </p>
                   </div>
                 </div>
@@ -308,8 +309,8 @@
               password: $('#passwordField').val().trim()
           },
           function(data, status){
-            alert("Signed in!");
               window.localStorage.setItem('token', data);
+              $('#signin').modal('hide');
               var user = $('#emailField').val().trim();
               window.location.href='/userAccount/' + user;
               return false;
@@ -326,6 +327,7 @@
           function(data, status){
               //Maybe make below prettier instead of an alert.
               alert('Created new account!');
+              $('#signin').modal('hide');
           });
       });
 
@@ -345,6 +347,7 @@
           },
           function(date, status){
             alert('Created new event!');
+            $('#create').modal('hide');
           });
       });
 
