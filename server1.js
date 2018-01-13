@@ -26,6 +26,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // =============================================================
 
 
+app.get("/", function(req, res) {
+  res.render("index");
+})
+
 // Get all events
 app.get("/events", function(req, res) {
    axios.get('https://cryptic-ridge-95312.herokuapp.com/api/allEvents')
@@ -57,6 +61,10 @@ app.get("/userAccount", function(req, res) {
   });
     
 });
+
+// app.post("/newEvent", function(req,res) {
+  
+// })
 
 // Starts the server to begin listening
 // =============================================================
