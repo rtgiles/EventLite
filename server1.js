@@ -47,12 +47,12 @@ app.get("/events", function(req, res) {
 
 
 // Get user events
-app.get("/userAccount", function(req, res) {
-   axios.get('https://cryptic-ridge-95312.herokuapp.com/api/userEvents')
+app.get("/userAccount/:userName", function(req, res) {
+   axios.get('https://cryptic-ridge-95312.herokuapp.com/api/userEvents/' + req.params.userName)
   .then(function (response) {
      res.render('userAccount', {
-    username: response.data.username,
-      events: response.data.events
+        username: req.params.userName,
+        events: response.data
   }); 
     console.log(response);
   })
@@ -62,11 +62,6 @@ app.get("/userAccount", function(req, res) {
     
 });
 
-// app.post("/newEvent", function(req,res) {
-  
-// })
-
-// Starts the server to begin listening
 // =============================================================
 app.listen(port, function() {
   console.log("App listening on PORT " + port);

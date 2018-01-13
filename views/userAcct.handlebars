@@ -301,7 +301,7 @@
 
       //Darko Added 
       $('.signInBtn').on('click', function(){
-          $.post("http://localhost:8080/api/login",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/login",
           {
               username: $('#emailField').val().trim(),
               password: $('#passwordField').val().trim()
@@ -313,7 +313,7 @@
       });
       //Note you have to name your signup div's ids emailFieldSU and passwordFieldSU
       $('.signUpBtn').on('click', function(){
-          $.post("http://localhost:8080/api/signup",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/signup",
           {
               username: $('#emailField').val().trim(),
               password: $('#passwordField').val().trim()
