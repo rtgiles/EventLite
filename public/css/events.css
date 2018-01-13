@@ -29,6 +29,12 @@ h3 {
   font-size: 18px;
 }
 
+#sign-in {
+  width: 25%;
+  word-break: normal;
+  height: 38px;
+}
+
 .btn-secondary {
   border: 1px solid white;
   border-radius: 17px;
