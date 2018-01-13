@@ -325,7 +325,11 @@
               password: $('#passwordField').val().trim()
           },
           function(data, status){
+            alert("Signed in!");
               window.localStorage.setItem('token', data);
+              var user = $('#emailField').val().trim();
+              window.location.href='/userAccount/' + user;
+              return false;
               //Add something to exit modal.
           });
       });

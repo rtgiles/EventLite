@@ -177,7 +177,7 @@
         <div class="col-lg-3">
 
           <h1 class="my-4">EventLite</h1>
-          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+          <div class="btn-group-vertical" id="myBtnContainer" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary" onclick="filterSelection('all')">Show All</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Music')">Music</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Food')">Food &amp; Drink</button>
@@ -195,15 +195,15 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
           <div>
             <div class="jumbotron vertical-central">
               <div class="container-fluid text-center">
-                <h1 class="display-4">{{username}}}</h1>
+                <h1 class="display-4">{{username}}</h1>
                 <p class="lead">Your Events</p>
               </div>
             </div>
           </div>
+          
 <!-- Display Each event using Handlebars -->
           <div class="row">
             <!--<script id="eventTemplate" type="text/x-handlebars-template">-->
@@ -307,7 +307,11 @@
               password: $('#passwordField').val().trim()
           },
           function(data, status){
+            alert("Signed in!");
               window.localStorage.setItem('token', data);
+              var user = $('#emailField').val().trim();
+              window.location.href='/userAccount/' + user;
+              return false;
               //Add something to exit modal.
           });
       });
@@ -324,8 +328,23 @@
           });
       });
 
+      $('#createEvent').on('click', function(){
+        console.log("hi");
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/insertEvent", {
+              title: $('#titleField').val().trim(),
+              organizer: $('#orgField').val().trim(),
+              short: $('#shortDescField').val().trim(),
+              long: $('#longDescField').val().trim(),
+              date: $('#dateField').val(),
+              time: $('#timeField').val(),
+              address: $('#addressField').val().trim(),
+              pic: $('#picField').val().trim(),
+              category1: $('#category1').val(),
+              category2: $('#category2').val()
+          },
+          function(date, status){
+            alert('Created new event!');
+          });
+      });
+
     </script>
-
-  
-
-

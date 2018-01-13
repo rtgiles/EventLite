@@ -50,7 +50,7 @@ app.get("/events", function(req, res) {
 app.get("/userAccount/:userName", function(req, res) {
    axios.get('https://cryptic-ridge-95312.herokuapp.com/api/userEvents/' + req.params.userName)
   .then(function (response) {
-     res.render('userAccount', {
+     res.render('userAcct', {
         username: req.params.userName,
         events: response.data
   }); 
