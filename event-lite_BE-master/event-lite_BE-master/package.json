@@ -1,0 +1,26 @@
+{
+  "name": "ticketmaster",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.7",
+    "twitter": "^1.7.1"
+  },
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
+  }
+}

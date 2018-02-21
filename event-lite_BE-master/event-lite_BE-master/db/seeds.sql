@@ -1,0 +1,7 @@
+
+INSERT INTO events(account_name, title, organizer, short_desc, full_desc, event_date, event_time, event_address, eventLinkPic, eventCategoryOne, eventCategoryTwo)
+VALUES ('Will', 'Burger Run', 'Hungry People', 'go get burger', 'go get burgers at Au Cheval', '2018-07-15 14:30:00', 'Au Cheval @ 800 W Randolph St, Chicago, IL 60607', 'http://auchevalchicago.com/wp-content/uploads/Au-Cheval-Fries-w-Egg_Hi-Res.jpg', 'Food', 'Food' ),
+		('Darko', 'Beer Run', 'Thirst People', 'go get beer', 'go get beet at Foremost', '2018-07-04 16:00:00', 'Foremost Liquors @ 275 Green Bay Rd, Wilmette, IL 60091', 'https://www.drinkpreneur.com/wp-content/uploads/2017/04/drinkpreneur_2016-01-26-1453821995-8643361-beermain.jpg', 'Food', 'Other'),
+		('Antoine', 'Basketball Run', 'Basketball People', 'go play ball', 'go play basketball at United Center', '2018-09-21 13:20:00', 'United Center @ 1901 W Madison St, Chicago, IL 60612', 'http://www.unitedcenter.com/assets/1/7/unitedcenter3.png', 'Sports', 'Other'),
+		('Ron', 'Chicken Nugget Run', 'Chicken People', 'go get chicken nuggets', 'go get chicken nuggets at Wendys', '2018-04-15 12:25:00', 'Wendys @ 3700 Touhy Ave, Skokie, IL 60076', 'https://i0.wp.com/www.criticalhit.net/images/2017/04/wendys-chicken-nuggets.jpg?resize=850%2C478', 'Food', 'Education'),
+		('Van', 'Game Run', 'Game People', 'go get games', 'go get games at GameStop', '2018-01-28 01:00:00', 'GameStop @ 3333 W. Touhy Ave, Lincolnwood, IL 60712', 'http://www.mytotalretail.com/wp-content/uploads/sites/14/2017/07/gamestop.png', 'Other', 'Arts');
