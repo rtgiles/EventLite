@@ -138,11 +138,10 @@
             </form>
           </div>
           <div class="modal-footer">
-
-            <button type="button" class="btn btn-info" id="sign-in" >Sign In with Facebook</button>
-            <button type="button" class="btn btn-primary" id="sign-in" >Sign In</button>
-            <button type="button" class="btn btn-primary" id="sign-in" >Create New User Account</button>
-            <button type="button" class="btn btn-secondary" id="sign-in" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="fbBtn"><img src="http://static.adweek.com/adweek.com-prod/wp-content/uploads/sites/2/2013/01/fb-icon3.png" width=38px></button>
+            <button type="button" class="btn btn-primary signUpBtn">Create Account</button>
+            <button type="button" class="btn btn-primary signInBtn">Sign In</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -178,7 +177,7 @@
         <div class="col-lg-3">
 
           <h1 class="my-4">EventLite</h1>
-          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+          <div class="btn-group-vertical" id="myBtnContainer" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary" onclick="filterSelection('all')">Show All</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Music')">Music</button>
             <button type="button" class="btn btn-secondary" onclick="filterSelection('Food')">Food &amp; Drink</button>
@@ -235,7 +234,8 @@
                       <a href="#" data-toggle="modal" data-target="#{{this.id}}">{{this.title}}</a> 
                     </h4>
                     <h3 class="timeDate">{{moment this.event_date format="dddd, MMMM Do YYYY"}} </h3>
-                    <h3 class="timeDate">{{moment this.event_date format="h:mm a"}} </h3>
+     
+          
                     <p class="card-text">{{this.short_desc}} </p>
                   </div>
                 </div>
@@ -321,26 +321,51 @@
 
       //Darko Added 
       $('.signInBtn').on('click', function(){
-          $.post("http://localhost:8080/api/login",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/login",
           {
               username: $('#emailField').val().trim(),
               password: $('#passwordField').val().trim()
           },
           function(data, status){
               window.localStorage.setItem('token', data);
+              $('#signin').modal('hide');
+              var user = $('#emailField').val().trim();
+              window.location.href='/userAccount/' + user;
+              return false;
               //Add something to exit modal.
           });
       });
       //Note you have to name your signup div's ids emailFieldSU and passwordFieldSU
       $('.signUpBtn').on('click', function(){
-          $.post("http://localhost:8080/api/signup",
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/signup",
           {
-              username: $('#emailFieldSU').val().trim(),
-              password: $('#passwordFieldSU').val().trim()
+              username: $('#emailField').val().trim(),
+              password: $('#passwordField').val().trim()
           },
           function(data, status){
               //Maybe make below prettier instead of an alert.
               alert('Created new account!');
+              $('#signin').modal('hide');
+          });
+      });
+
+      $('#createEvent').on('click', function(){
+        console.log("hi");
+          $.post("https://cryptic-ridge-95312.herokuapp.com/api/insertEvent", {
+              title: $('#titleField').val().trim(),
+              organizer: $('#orgField').val().trim(),
+              short: $('#shortDescField').val().trim(),
+              long: $('#longDescField').val().trim(),
+              date: $('#dateField').val(),
+              time: $('#timeField').val(),
+              address: $('#addressField').val().trim(),
+              pic: $('#picField').val().trim(),
+              category1: $('#category1').val(),
+              category2: $('#category2').val()
+          },
+          function(date, status){
+            alert('Created new event!');
+            $('#create').modal('hide');
           });
       });
 
